@@ -11,6 +11,19 @@
 		{
 		  bubs[i].className = "nobubble";
 		}
+		document.getElementById('stopButton').style.visibility = 'hidden';
+		document.getElementById('startButton').style.visibility = 'visible';
+	}
+
+	function startBubbling() 
+	{
+		var bubs = document.getElementsByName("bubblepic");
+		for (var i = bubs.length - 1; i >= 0; i--)
+		{
+		  bubs[i].className = "photobubble";
+		}
+		document.getElementById('startButton').style.visibility = 'hidden';
+		document.getElementById('stopButton').style.visibility = 'visible';
 	}
 	</script>
 </head>
@@ -19,7 +32,8 @@
 <div id="pagewrapper">
 	<div id="header">
 		<h1>Paula</h1>
-		<button class="button" onclick="stopBubbling()">Stop this crazy spinning!!!</button>
+		<button class="button" id="startButton" onclick="startBubbling()" visibility="hidden">Let's take a spin!</button>
+		<button class="button" id="stopButton" onclick="stopBubbling()">Stop this crazy spinning!!!</button>
 	</div>
 	<div id="sidebar">
 		<div class="sidesection">
