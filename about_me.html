@@ -4,26 +4,22 @@
 	<link href='http://fonts.googleapis.com/css?family=Averia+Libre:400,400italic,700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="about_me.css">
 	<script>
-	function stopBubbling() 
+	function toggleButton() 
 	{
 		var bubs = document.getElementsByName("bubblepic");
-		for (var i = bubs.length - 1; i >= 0; i--)
-		{
-		  bubs[i].className = "nobubble";
+		if (document.getElementById('theButton').innerHTML == "Let's take a spin!") {
+			for (var i = bubs.length - 1; i >= 0; i--)	{
+		  		bubs[i].className = "photobubble";
+		  		document.getElementById('theButton').innerHTML = "Stop this crazy spinning!!!";
+			}
 		}
-		document.getElementById('stopButton').style.visibility = 'hidden';
-		document.getElementById('startButton').style.visibility = 'visible';
-	}
+		else {
+			for (var i = bubs.length - 1; i >= 0; i--)	{
+			  bubs[i].className = "nobubble";
+			  document.getElementById('theButton').innerHTML = "Let's take a spin!";
+			}
+		}
 
-	function startBubbling() 
-	{
-		var bubs = document.getElementsByName("bubblepic");
-		for (var i = bubs.length - 1; i >= 0; i--)
-		{
-		  bubs[i].className = "photobubble";
-		}
-		document.getElementById('startButton').style.visibility = 'hidden';
-		document.getElementById('stopButton').style.visibility = 'visible';
 	}
 	</script>
 </head>
@@ -32,8 +28,7 @@
 <div id="pagewrapper">
 	<div id="header">
 		<h1>Paula</h1>
-		<button class="button" id="startButton" onclick="startBubbling()" visibility="hidden">Let's take a spin!</button>
-		<button class="button" id="stopButton" onclick="stopBubbling()">Stop this crazy spinning!!!</button>
+		<button class="button" id="theButton" onclick="toggleButton()">Stop this crazy spinning!!!</button>
 	</div>
 	<div id="sidebar">
 		<div class="sidesection">
